@@ -2,7 +2,7 @@
 
 namespace Moretext;
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . "/../vendor/autoload.php";
 
 /**
  * Client to access the service
@@ -10,14 +10,23 @@ require __DIR__ . '/../vendor/autoload.php';
  */
 class Client
 {
-    public function get()
+    public function get($n = 1, $limit = null)
     {
-        $client = new GuzzleHttp\Client();
-        $res = $client->get("http://more.handlino.com/sentences.json");
-        if ($res->getStatusCode() !== "200") {
-            throw new Error($res->getStatusCode());
+        $query = [ "n" => $n ];
+        if (! is_null($limit)) {
+            if (is_array($limit)) {
+                $limit = $limit[0] . "," . $limit[1];
+            }
+            $query["limit"] = $limit;
+        }
+        $client = new \GuzzleHttp\Client();
+        $res = $client->get("http://more.handlino.com/sentences.json", [
+            "query" => $query
+        ]);
+        if ($res->getStatusCode() !== 200) {
+            throw new \Exception($res->getStatusCode());
         }
         $result = json_decode($res->getBody());
-        return $result['sentences'];
+        return $result->sentences;
     }
 }
