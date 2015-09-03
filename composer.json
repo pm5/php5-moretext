@@ -8,6 +8,14 @@
             "email": "pomin5@gmail.com"
         }
     ],
+    "homepage": "https://github.com/pm5/php5-moretext",
+    "keywords": [
+        "test",
+        "lorem",
+        "ipsum",
+        "placeholder",
+        "cli"
+    ],
     "require": {
         "guzzlehttp/guzzle": "^6.0"
     },

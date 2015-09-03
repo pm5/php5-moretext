@@ -1,0 +1,11 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/pm5/php5-moretext"
+    }
+  ],
+  "require": {
+    "pm5/moretext": "dev-master"
+  }
+}
