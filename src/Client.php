@@ -2,8 +2,6 @@
 
 namespace Moretext;
 
-require __DIR__ . "/../vendor/autoload.php";
-
 /**
  * Client to access the service
  * @packaged Moretext
