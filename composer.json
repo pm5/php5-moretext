@@ -1,0 +1,14 @@
+{
+    "name": "pm5/moretext",
+    "description": "Get dummy Chinese text (lorem ipsum) with Handlino serivce.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pomin Wu",
+            "email": "pomin5@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.0"
+    }
+}
